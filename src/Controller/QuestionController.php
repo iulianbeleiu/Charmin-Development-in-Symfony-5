@@ -12,21 +12,20 @@ class QuestionController extends AbstractController
 {
     /**
      * @return Response
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
     public function homepage()
     {
-        return new Response("Hello");
+        return $this->render('question/homepage.html.twig');
     }
 
     /**
-     * @Route("/questions/{slug}")
+     * @Route("/questions/{slug}", name="app_question_show")
      * @param $slug
      * @return Response
      */
     public function show($slug)
     {
-        dump();
         $answers = [
             'Make sure your cat is sitting purrrfectly still 🤣',
             'Honestly, I like furry shoes better than MY cat',
